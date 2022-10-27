@@ -38,9 +38,13 @@ export default function TodoItem({
   return (
     <div>
       <S.TodoItems>
-        <div title={contents} onClick={() => onComplete(id)}>
+        <S.TodoContents
+          title={contents}
+          isCompleted={isCompleted}
+          onClick={() => onComplete(id)}
+        >
           {contents}
-        </div>
+        </S.TodoContents>
         <div>
           <FaPen onClick={onModify} />
           <MdClose onClick={() => onDelete(id)} />

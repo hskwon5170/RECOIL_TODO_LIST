@@ -39,3 +39,8 @@ export const TodoItems = styled.div`
   /* background-color: blue; */
   width: 100%;
 `;
+
+export const TodoContents = styled.div`
+  text-decoration: ${({ isCompleted }) => isCompleted && "line-through"};
+  cursor: pointer;
+`;
