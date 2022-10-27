@@ -7,13 +7,15 @@ export const Wrapper = styled.div`
   width: 500px;
   height: 500px;
   position: relative;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 1.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   box-sizing: border-box;
+  box-shadow: -30px 30px 30px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
 `;
 
 export const TodoItemsWrapper = styled.div`
@@ -27,6 +29,7 @@ export const List = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: black;
 `;
 
 export const TodoItems = styled.div`
@@ -45,10 +48,13 @@ export const TodoItems = styled.div`
 export const TodoContents = styled.div`
   text-decoration: ${({ isCompleted }) => isCompleted && "line-through"};
   cursor: pointer;
+  color: black;
 `;
 
 export const MdCloseIcon = styled(MdClose)`
   margin-left: 15px;
+  color: black;
+  height: 30px;
   cursor: pointer;
   :hover {
     transform: scale(1.2);
@@ -58,6 +64,8 @@ export const MdCloseIcon = styled(MdClose)`
 
 export const FaPenIcon = styled(FaPen)`
   cursor: pointer;
+  height: 30px;
+  color: black;
   :hover {
     transform: scale(1.2);
     transition-duration: 0.5s;

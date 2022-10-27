@@ -43,12 +43,8 @@ export default function TodoItem({
     <div>
       <S.TodoItems>
         {/* <Switch size="small" /> */}
-        <S.TodoContents
-          title={contents}
-          isCompleted={isCompleted}
-          onClick={() => onComplete(id)}
-        >
-          <S.SwitchIcon size="small" />
+        <S.TodoContents title={contents} isCompleted={isCompleted}>
+          <S.SwitchIcon size="small" onClick={() => onComplete(id)} />
 
           {contents}
         </S.TodoContents>

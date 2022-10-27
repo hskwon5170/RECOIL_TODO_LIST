@@ -12,8 +12,8 @@ export const Overlay = styled.div`
 `;
 
 export const TodoModalss = styled.div`
-  width: 40%;
-  height: 40%;
+  width: 35%;
+  height: 35%;
   background-color: white;
   padding: 3.6rem;
   border-radius: 10px;
@@ -78,9 +78,9 @@ export const MdCloseIcon = styled(MdClose)`
   margin-left: 15px;
   cursor: pointer;
   background-color: blue;
-  position: absolute;
-  top: 17px;
-  left: 29rem;
+  position: relative;
+  top: -30px;
+  left: 36rem;
   :hover {
     transform: scale(1.2);
     transition-duration: 0.5s;
