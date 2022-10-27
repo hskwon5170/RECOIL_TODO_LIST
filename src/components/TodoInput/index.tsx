@@ -2,6 +2,8 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { InputState, ITodoTypes, todoState } from "../../commons/store";
 import { useCallback } from "react";
 import * as S from "./TodoInput.styles";
+import { message } from "antd";
+import React from "react";
 
 export default function TodoInput() {
   const [contents, setContents] = useRecoilState(InputState);
@@ -25,6 +27,8 @@ export default function TodoInput() {
 
     setTodos([...todos, todo]);
     setContents("");
+    // alert("투두가 등록되었어요");
+    message.success("투두가 등록되었어요", 0.5);
   }, [contents, setContents, setTodos, todos]);
 
   const onChange = useCallback(

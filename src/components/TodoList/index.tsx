@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import { useRecoilState } from "recoil";
 import { todoState } from "../../commons/store";
 import TodoItem from "./TodoItem";
@@ -7,24 +6,30 @@ import * as S from "./TodoList.styles";
 
 export default function TodoList() {
   const [todos, setTodos] = useRecoilState(todoState);
+  console.log("todos", todos);
 
   const onComplete = useCallback(
     id => {
+      // 매개 변수 id와 el.id가 같은 객체만 완료상태 표시
       setTodos(
         todos.map(el => {
           return el.id === id ? { ...el, isCompleted: !el.isCompleted } : el;
         })
       );
     },
+
     [setTodos, todos]
   );
 
-  const onDelete = useCallback(
-    id => {
-      setTodos(todos.filter(el => el.id !== id));
-    },
-    [setTodos]
-  );
+  // const onDelete = useCallback(
+  //   id => {
+  //     setTodos(todos.filter(el => el.id !== id));
+  //   },
+  //   [setTodos]
+  // );
+  const onDelete = id => () => {
+    setTodos(todos.filter(el => el.id !== id));
+  };
 
   return (
     <S.Wrapper>
@@ -49,7 +54,7 @@ export default function TodoList() {
             );
           })
         ) : (
-          <S.List>Todo가 없습니다.</S.List>
+          <S.List>등록된 Todo가 없습니다.</S.List>
         )}
       </S.TodoItemsWrapper>
     </S.Wrapper>

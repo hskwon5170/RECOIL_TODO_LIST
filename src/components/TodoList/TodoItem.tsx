@@ -47,7 +47,8 @@ export default function TodoItem({
         </S.TodoContents>
         <div>
           <FaPen onClick={onModify} />
-          <MdClose onClick={() => onDelete(id)} />
+          <div onClick={onDelete(id)}>삭제하기</div>
+          {/* <MdClose onClick={() => onDelete(id)} /> */}
         </div>
         {isModal && (
           <TodoModals

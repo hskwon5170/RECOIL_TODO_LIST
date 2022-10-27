@@ -10,21 +10,12 @@ export const InputState = atom<string>({
 
 export const todoState = atom({
   key: "todoState",
-  default: [
-    {
-      id: 1,
-      contents: "Todo List",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      contents: "자유롭게",
-      isCompleted: false,
-    },
-    {
-      id: 3,
-      contents: "추가하기",
-      isCompleted: false,
-    },
-  ],
+  // default: [
+  //   {
+  //     id: 1,
+  //     contents: "add TodoList",
+  //     isCompleted: false,
+  //   },
+  // ],
+  default: "",
 });
