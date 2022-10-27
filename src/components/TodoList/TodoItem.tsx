@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useState, useCallback } from "react";
 import { FaPen } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import TodoModals from "../TodoModal";
 
 const TodoItems = styled.div`
   display: flex;
@@ -12,6 +13,8 @@ const TodoItems = styled.div`
   padding-bottom: 6px;
   border-bottom: 1px solid var(--white);
   font-size: 1.2rem;
+  /* background-color: blue; */
+  width: 100%;
 `;
 
 export default function TodoItem({
@@ -45,8 +48,8 @@ export default function TodoItem({
   }, [id, modifyContents, setTodos, todos]);
 
   return (
-    <TodoItems>
-      <div>
+    <div>
+      <TodoItems>
         <div title={contents} onClick={() => onComplete(id)}>
           {contents}
         </div>
@@ -54,7 +57,15 @@ export default function TodoItem({
           <FaPen onClick={onModify} />
           <MdClose onClick={() => onDelete(id)} />
         </div>
-      </div>
-    </TodoItems>
+        {isModal && (
+          <TodoModals
+            setIsModal={setIsModal}
+            modifyContents={modifyContents}
+            setModifyContents={setModifyContents}
+            onModifyTodo={onModifyTodo}
+          />
+        )}
+      </TodoItems>
+    </div>
   );
 }
