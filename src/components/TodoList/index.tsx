@@ -8,9 +8,11 @@ export default function TodoList() {
   const [todos, setTodos] = useRecoilState(todoState);
   console.log("todos", todos);
 
+  // 완료 표시 (가운데 밑줄)
   const onComplete = useCallback(
+    // 이곳 onComplete의 매개변수 id는 TodoItem.tsx의 contents conClick에서 제공받음
     id => {
-      // 매개 변수 id와 el.id가 같은 객체만 완료상태 표시
+      // 매개 변수 id와 el.id가 같은 객체만 setTodos 해서 todos 값 변경시키기
       setTodos(
         todos.map(el => {
           return el.id === id ? { ...el, isCompleted: !el.isCompleted } : el;
@@ -21,19 +23,30 @@ export default function TodoList() {
     [setTodos, todos]
   );
 
+  // useCallback을 HOF 방식으로 표현
+  // const onComplete = id => () => {
+  //   setTodos(
+  //     todos.map(el => {
+  //       return el.id === id ? { ...el, isCompleted: !el.isCompleted } : el;
+  //     })
+  //   );
+  // };
+
   // const onDelete = useCallback(
   //   id => {
   //     setTodos(todos.filter(el => el.id !== id));
   //   },
   //   [setTodos]
   // );
+
+  // useCallback을 HOF 방식으로 표현
   const onDelete = id => () => {
     setTodos(todos.filter(el => el.id !== id));
   };
 
   return (
     <S.Wrapper>
-      <S.TodoItemsWrapper>
+      <div>
         {/* <TodoItem /> */}
         {/* <List>Todo가 없습니다. 자유롭게 추가해보세요</List> */}
         {todos.length > 0 ? (
@@ -54,9 +67,11 @@ export default function TodoList() {
             );
           })
         ) : (
-          <S.List>등록된 Todo가 없습니다.</S.List>
+          <>
+            <S.List>등록된 Todo가 없습니다.</S.List>
+          </>
         )}
-      </S.TodoItemsWrapper>
+      </div>
     </S.Wrapper>
   );
 }

@@ -31,15 +31,15 @@ export default function TodoModals({
           <div>Todo 수정하기</div>
           <FaPen />
         </div>
-        <div>
-          <input
+        <S.InputButtonWrapper>
+          <S.SearchInput
             type="text"
             value={modifyContents}
             onChange={onChange}
             placeholder="todo 입력"
           />
-          <button onClick={onModifyTodo}>수정하기</button>
-        </div>
+          <S.Button onClick={onModifyTodo}>수정하기</S.Button>
+        </S.InputButtonWrapper>
       </S.TodoModalss>
     </S.Overlay>
   );

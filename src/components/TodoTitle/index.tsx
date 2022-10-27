@@ -18,7 +18,7 @@ const Icon = styled(GiWireCoil)`
 export default function TodoTitle() {
   return (
     <Wrapper>
-      <div>Todolist with recoil</div>
+      <div>TODOLIST WITH RECOIL</div>
     </Wrapper>
   );
 }

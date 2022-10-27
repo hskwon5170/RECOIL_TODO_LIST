@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 import { useState, useCallback } from "react";
-import { FaPen } from "react-icons/fa";
-import { MdClose } from "react-icons/md";
 import TodoModals from "../TodoModal";
 import * as S from "./TodoList.styles";
+import { message } from "antd";
 
 export default function TodoItem({
   id,
@@ -17,6 +16,7 @@ export default function TodoItem({
   const [isModal, setIsModal] = useState(false);
   const [modifyContents, setModifyContents] = useState("");
 
+  // FaPen버튼
   const onModify = useCallback(() => {
     setIsModal(true);
     setModifyContents(contents);
@@ -24,6 +24,7 @@ export default function TodoItem({
 
   const onModifyTodo = useCallback(() => {
     if (!modifyContents.trim()) {
+      message.error("값이 입력되지 않았어요 😰", 1);
       return;
     }
     setTodos(
@@ -46,8 +47,8 @@ export default function TodoItem({
           {contents}
         </S.TodoContents>
         <div>
-          <FaPen onClick={onModify} />
-          <div onClick={onDelete(id)}>삭제하기</div>
+          <S.FaPenIcon onClick={onModify} />
+          <S.MdCloseIcon onClick={onDelete(id)}>삭제하기</S.MdCloseIcon>
           {/* <MdClose onClick={() => onDelete(id)} /> */}
         </div>
         {isModal && (

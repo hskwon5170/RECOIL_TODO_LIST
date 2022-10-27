@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
+import { FaPen } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
 
 export const Wrapper = styled.div`
   width: 500px;
-  /* height: 500px; */
-  max-height: 500px;
+  height: 500px;
   position: relative;
   border: 2px solid white;
   border-radius: 10px;
@@ -43,4 +44,21 @@ export const TodoItems = styled.div`
 export const TodoContents = styled.div`
   text-decoration: ${({ isCompleted }) => isCompleted && "line-through"};
   cursor: pointer;
+`;
+
+export const MdCloseIcon = styled(MdClose)`
+  margin-left: 15px;
+  cursor: pointer;
+  :hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+  }
+`;
+
+export const FaPenIcon = styled(FaPen)`
+  cursor: pointer;
+  :hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+  }
 `;

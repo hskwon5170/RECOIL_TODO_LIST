@@ -29,3 +29,46 @@ export const TodoModalss = styled.div`
   -ms-flex-direction: column;
   align-items: center;
 `;
+
+export const InputButtonWrapper = styled.div`
+  display: flex;
+`;
+
+export const SearchInput = styled.input`
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+  color: black;
+  margin: 0px 20px;
+
+  ::placeholder {
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: relative;
+    /* left: 3%; */
+    top: 10%;
+    color: black;
+    width: 66%;
+    /* background-color: blue; */
+  }
+`;
+
+export const Button = styled.button`
+  width: 171px;
+  height: 52px;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  color: #0d008e;
+  cursor: pointer;
+  background-color: #50ffb0;
+  border: none;
+  transition: background 0.2s ease-in-out;
+  :hover {
+    background-color: #0d008e;
+    border: none;
+    color: white;
+  }
+`;

@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.10.4",
     "antd": "^4.23.6",
     "framer-motion": "^7.6.1",
+    "lottie-web": "^5.9.6",
     "next": "13.0.0",
     "node-sass": "^7.0.3",
     "react": "18.2.0",
@@ -24,6 +25,7 @@
     "styled-reset": "^4.4.2"
   },
   "devDependencies": {
+    "@types/node": "^18.11.7",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0"
   }
