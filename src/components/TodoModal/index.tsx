@@ -24,14 +24,12 @@ export default function TodoModals({
     },
     [setModifyContents]
   );
+
   return (
-    <S.Overlay onClick={onCloseModal}>
+    <S.Overlay>
       <S.TodoModalss>
-        <div>
-          <div>Todo 수정하기</div>
-          <FaPen />
-        </div>
         <S.InputButtonWrapper>
+          <S.MdCloseIcon onClick={onCloseModal} />
           <S.SearchInput
             type="text"
             value={modifyContents}

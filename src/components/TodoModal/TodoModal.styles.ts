@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { MdClose } from "react-icons/md";
 
 export const Overlay = styled.div`
   position: fixed;
@@ -14,7 +15,7 @@ export const TodoModalss = styled.div`
   width: 40%;
   height: 40%;
   background-color: white;
-  padding: 1.6rem;
+  padding: 3.6rem;
   border-radius: 10px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -70,5 +71,18 @@ export const Button = styled.button`
     background-color: #0d008e;
     border: none;
     color: white;
+  }
+`;
+
+export const MdCloseIcon = styled(MdClose)`
+  margin-left: 15px;
+  cursor: pointer;
+  background-color: blue;
+  position: absolute;
+  top: 17px;
+  left: 29rem;
+  :hover {
+    transform: scale(1.2);
+    transition-duration: 0.5s;
   }
 `;

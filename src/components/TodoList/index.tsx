@@ -2,6 +2,7 @@ import { useRecoilState } from "recoil";
 import { todoState } from "../../commons/store";
 import TodoItem from "./TodoItem";
 import { useCallback } from "react";
+import { message } from "antd";
 import * as S from "./TodoList.styles";
 
 export default function TodoList() {
@@ -42,6 +43,7 @@ export default function TodoList() {
   // useCallback을 HOF 방식으로 표현
   const onDelete = id => () => {
     setTodos(todos.filter(el => el.id !== id));
+    message.success("투두가 삭제되었어요 😌", 1);
   };
 
   return (

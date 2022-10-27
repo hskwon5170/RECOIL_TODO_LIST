@@ -3,6 +3,8 @@ import { useState, useCallback } from "react";
 import TodoModals from "../TodoModal";
 import * as S from "./TodoList.styles";
 import { message } from "antd";
+import { Switch } from "antd";
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 
 export default function TodoItem({
   id,
@@ -34,21 +36,25 @@ export default function TodoItem({
     );
 
     setIsModal(false);
+    message.success("투두가 수정되었어요 😌", 1);
   }, [id, modifyContents, setTodos, todos]);
 
   return (
     <div>
       <S.TodoItems>
+        {/* <Switch size="small" /> */}
         <S.TodoContents
           title={contents}
           isCompleted={isCompleted}
           onClick={() => onComplete(id)}
         >
+          <S.SwitchIcon size="small" />
+
           {contents}
         </S.TodoContents>
         <div>
           <S.FaPenIcon onClick={onModify} />
-          <S.MdCloseIcon onClick={onDelete(id)}>삭제하기</S.MdCloseIcon>
+          <S.MdCloseIcon onClick={onDelete(id)} />
           {/* <MdClose onClick={() => onDelete(id)} /> */}
         </div>
         {isModal && (

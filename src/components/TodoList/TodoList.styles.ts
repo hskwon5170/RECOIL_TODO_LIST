@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { FaPen } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { Switch } from "antd";
 
 export const Wrapper = styled.div`
   width: 500px;
@@ -61,4 +62,8 @@ export const FaPenIcon = styled(FaPen)`
     transform: scale(1.2);
     transition-duration: 0.5s;
   }
+`;
+
+export const SwitchIcon = styled(Switch)`
+  margin-right: 20px;
 `;
