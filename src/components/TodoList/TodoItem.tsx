@@ -3,19 +3,7 @@ import { useState, useCallback } from "react";
 import { FaPen } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import TodoModals from "../TodoModal";
-
-const TodoItems = styled.div`
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--white);
-  font-size: 1.2rem;
-  /* background-color: blue; */
-  width: 100%;
-`;
+import * as S from "./TodoList.styles";
 
 export default function TodoItem({
   id,
@@ -49,7 +37,7 @@ export default function TodoItem({
 
   return (
     <div>
-      <TodoItems>
+      <S.TodoItems>
         <div title={contents} onClick={() => onComplete(id)}>
           {contents}
         </div>
@@ -65,7 +53,7 @@ export default function TodoItem({
             onModifyTodo={onModifyTodo}
           />
         )}
-      </TodoItems>
+      </S.TodoItems>
     </div>
   );
 }

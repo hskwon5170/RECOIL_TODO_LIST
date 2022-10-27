@@ -3,33 +3,7 @@ import { useRecoilState } from "recoil";
 import { todoState } from "../../commons/store";
 import TodoItem from "./TodoItem";
 import { useCallback } from "react";
-
-export const Wrapper = styled.div`
-  width: 500px;
-  /* height: 500px; */
-  max-height: 500px;
-  position: relative;
-  border: 2px solid white;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 1.5rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  box-sizing: border-box;
-`;
-
-export const TodoItemsWrapper = styled.div`
-  width: 100%;
-`;
-
-export const List = styled.div`
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+import * as S from "./TodoList.styles";
 
 export default function TodoList() {
   const [todos, setTodos] = useRecoilState(todoState);
@@ -53,8 +27,8 @@ export default function TodoList() {
   );
 
   return (
-    <Wrapper>
-      <TodoItemsWrapper>
+    <S.Wrapper>
+      <S.TodoItemsWrapper>
         {/* <TodoItem /> */}
         {/* <List>Todo가 없습니다. 자유롭게 추가해보세요</List> */}
         {todos.length > 0 ? (
@@ -75,9 +49,9 @@ export default function TodoList() {
             );
           })
         ) : (
-          <List>Todo가 없습니다.</List>
+          <S.List>Todo가 없습니다.</S.List>
         )}
-      </TodoItemsWrapper>
-    </Wrapper>
+      </S.TodoItemsWrapper>
+    </S.Wrapper>
   );
 }
