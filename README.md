@@ -26,6 +26,7 @@ yarn dev
 ## 기술스택 및 라이브러리
 
 - React.js
+- Next.js
 - TypeScript
 - Recoil
 - Emotion/Styled-components
