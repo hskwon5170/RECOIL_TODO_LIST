@@ -28,8 +28,8 @@ yarn dev
 - React.js
 - TypeScript
 - Recoil
-- Emotion
-- Antd
+- Emotion/Styled-components
+- Ant Design
 - Chakra UI
 - Material-UI
 
