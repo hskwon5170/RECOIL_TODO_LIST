@@ -70,7 +70,7 @@ export default function TodoList() {
           })
         ) : (
           <>
-            <S.List>등록된 Todo가 없습니다.</S.List>
+            <S.List>등록된 Todo가 없어요.</S.List>
           </>
         )}
       </div>

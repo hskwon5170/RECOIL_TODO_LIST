@@ -4,6 +4,7 @@ import { useCallback } from "react";
 import * as S from "./TodoInput.styles";
 import { message } from "antd";
 import React from "react";
+import useLocalStorage from "../../commons/hook/useLocalStorage";
 
 export default function TodoInput() {
   // input값을 recoil inputstate에 저장
@@ -36,7 +37,9 @@ export default function TodoInput() {
     };
 
     setTodos([...todos, todo]); // 기존 todos를 복사해오고 todo를 붙임
+    // localStorage.setItem("todoItems", JSON.stringify([...todos, todo]));
     setContents(""); // input 입력 후 빈값처리
+
     message.success("투두가 등록되었어요 😌", 1);
   }, [contents, setContents, setTodos, todos]);
 
@@ -51,13 +54,25 @@ export default function TodoInput() {
 
   return (
     <S.SearchWrap>
-      <S.SearchInput
+      {/* <S.SearchInput
         placeholder="Todo를 입력해주세요"
         type="text"
         value={contents}
         onChange={onChange}
         onKeyDown={onKeyDown}
+      /> */}
+      <S.InputM
+        id="standard-textarea"
+        label="Todo를 입력해주세요"
+        placeholder="오늘 할일은 무엇인가요?"
+        multiline
+        variant="standard"
+        fullWidth
+        value={contents}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
       />
+
       <S.Icon onClick={addTodo} />
     </S.SearchWrap>
   );

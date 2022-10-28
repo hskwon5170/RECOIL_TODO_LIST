@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.3.6",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.11",
     "antd": "^4.23.6",
     "framer-motion": "^7.6.1",
     "lottie-web": "^5.9.6",

@@ -49,6 +49,10 @@ export const TodoContents = styled.div`
   text-decoration: ${({ isCompleted }) => isCompleted && "line-through"};
   cursor: pointer;
   color: black;
+  position: relative;
+  /* background-color: blue; */
+  width: 50%;
+  right: 1rem;
 `;
 
 export const MdCloseIcon = styled(MdClose)`
